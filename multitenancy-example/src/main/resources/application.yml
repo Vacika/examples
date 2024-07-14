@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    default: # you can name this however you like, as long as you update the @ConfigurationProperties accordingly
+      url: jdbc:postgresql://localhost:5432/default_db
+      username: user
+      password: pass
+    tenant: # you can name this however you like, as long as you update the @ConfigurationProperties accordingly
+      tenant1: # you can name this however you like, as long as you update the @ConfigurationProperties accordingly
+        url: jdbc:postgresql://localhost:5433/tenant1_db
+        username: tenant1_user
+        password: tenant1_pass
+      tenant2: # you can name this however you like, as long as you update the @ConfigurationProperties accordingly
+        url: jdbc:postgresql://localhost:5434/tenant2_db
+        username: tenant2_user
+        password: tenant2_pass
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect # Change this accordingly with the dialect of your database
